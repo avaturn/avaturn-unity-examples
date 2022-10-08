@@ -17,12 +17,27 @@ function setupVtoFrame(subdomain) {
 
         // Get avatar GLB URL
         if (json.eventName === 'avatar.exported') {
-            let url = window.URL.createObjectURL(dataURItoBlob(json.blobURI));
-            console.log(`Avatar URL: ${url}`);
+            console.log(`Try pass base64`);
+            var start = json.blobURI.indexOf(',') + 1;
+            var length = json.blobURI.substring(start).length;
+            console.log("length = " + length);
             gameInstance.SendMessage(
                 "AvatarReceiver",
                 "GetFromVtoFrame",
-                url
+                "begin"
+            );
+            for (var i = 0; i < length + 16000; i += 16000) {
+                var chunk = i > length ? length - i : 16000;
+                gameInstance.SendMessage(
+                    "AvatarReceiver",
+                    "GetFromVtoFrame",
+                    json.blobURI.substring(start + i, start + i + chunk)
+                );
+            }
+            gameInstance.SendMessage(
+                "AvatarReceiver",
+                "GetFromVtoFrame",
+                "end"
             );
             vtoContainer.style.display = "none";
         }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using GLTFast;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,7 +10,7 @@ public class AvatarReceiver : MonoBehaviour
 
     [SerializeField] private string parameterKey;
     [SerializeField] private OnUrlReceived received;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,9 +37,22 @@ public class AvatarReceiver : MonoBehaviour
        }
        Debug.Log("Can't find link in page url");
     }
-
+    
+    public static readonly List<byte> GlbBytes = new List<byte>();
+    
     public void GetFromVtoFrame(string url)
     {
-        received?.Invoke(url);
+        switch (url)
+        {
+            case "begin":
+                GlbBytes.Clear();
+                return;
+            case "end":
+                received?.Invoke("bytes");
+                return;
+        }
+
+        byte[] glb = Convert.FromBase64String(url);
+        GlbBytes.AddRange(glb);
     }
 }

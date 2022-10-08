@@ -13,6 +13,7 @@
 // limitations under the License.
 //
 
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using GLTFast.Loading;
@@ -48,6 +49,26 @@ namespace GLTFast
                 // Automatic load on startup
                 await Load(FullUrl);
             }
+        }
+
+        public async Task<bool> Load(
+            byte[] data,
+            IDownloadProvider downloadProvider = null,
+            IDeferAgent deferAgent = null,
+            IMaterialGenerator materialGenerator = null,
+            ICodeLogger logger = null
+        )
+        {
+            var gltf = new GltfImport();
+            bool success = await gltf.LoadGltfBinary(
+                data, 
+                // The URI of the original data is important for resolving relative URIs within the glTF
+                null
+            );
+            if (success) {
+                success = gltf.InstantiateMainScene(transform);
+            }
+            return success;
         }
 
         public override async Task<bool> Load(
