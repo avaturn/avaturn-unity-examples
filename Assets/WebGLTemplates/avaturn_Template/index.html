@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>{{{ PRODUCT_NAME }}}</title>
+    <meta name="description" content="Example of WebGL, Unity, Avaturn">
+    <link rel="stylesheet" href="data/style.css">
+</head>
+
+<body>
+    <div id="canvas-wrap">
+        <div id="avaturn-container">
+            <iframe id="avaturn-iframe" class="vto-frame" allow="camera *; microphone *"></iframe>
+        </div>
+        <div id="unity-container">
+            <canvas id="unity-canvas" ></canvas>
+        </div>
+    </div>
+</body>
+
+<script src="data/Global.js"></script>
+<script src="data/AvaturnFrame.js"></script>
+<script src="Build/{{{ LOADER_FILENAME }}}"></script>
+<script>
+    function unityShowBanner(msg, type) {
+        
+    }
+    
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+    var config = {
+        dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+        frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+        codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+        #if MEMORY_FILENAME
+        memoryUrl: buildUrl + "/{{{ MEMORY_FILENAME }}}",
+        #endif
+        #if SYMBOLS_FILENAME
+        symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+        #endif
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "{{{ COMPANY_NAME }}}",
+        productName: "{{{ PRODUCT_NAME }}}",
+        productVersion: "{{{ PRODUCT_VERSION }}}",
+        showBanner: unityShowBanner,
+    };
+
+    createUnityInstance(canvas, config, (progress) => {
+        //progressBarFull.style.width = 100 * progress + "%";
+    })
+        .then((unityInstance) => {
+            gameInstance = unityInstance;
+        })
+        .catch((message) => {
+            alert(message);
+        });
+</script>
+
+</html>
