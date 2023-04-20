@@ -17,7 +17,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "5d4c55d61bacd087f00789f89e26f695dc9256a6"
+      "hash": "c462c9f75b63ee7a11a0b5f9695f458736196741"
     },
     "com.avaturn.installer": {
       "version": "https://github.com/avaturn/avaturn-unity-sdk-installer.git",
@@ -26,7 +26,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "8f7b271b244e2a524b831c1bf834c89b868be678"
+      "hash": "88c8aa41b81258467a67f87b486439b6db878724"
     },
     "com.unity.burst": {
       "version": "1.6.6",

@@ -1219,11 +1219,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AvaturnWebGL
       objectReference: {fileID: 0}
-    - target: {fileID: 4608349848159681342, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: _isLockCursor
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af94c7bc2cc95cf478bf43b884a59fc9, type: 3}
 --- !u!1001 &8345070700268369567
