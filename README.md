@@ -5,7 +5,7 @@ This repo contains examples of using Avaturn web view in Unity for WebGL and Mob
 1. Clone this repo to your hard disk using git, or download zip [here](https://github.com/avaturn/avaturn-unity-examples/archive/refs/heads/main.zip) and unpack to some folder.
 2. Open the project in Unity.
 
-Tested with Unity 2019.3+ .
+Supported Unity versions: 2019.3+  -- 2021.3. Unity 2022 is not yet LTS and is not supported at this moment.
 
 ## Subdomain 
 
