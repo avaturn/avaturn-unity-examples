@@ -26,7 +26,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "88c8aa41b81258467a67f87b486439b6db878724"
+      "hash": "ebac7d9cfd947c90db0ecb1d43ff5d32af85fe47"
     },
     "com.unity.burst": {
       "version": "1.6.6",
