@@ -10,14 +10,14 @@
         "com.unity.mathematics": "1.2.6",
         "com.unity.burst": "1.6.6"
       },
-      "hash": "3ebe1212dd8fdd3d9b990217be8d1130c624d778"
+      "hash": "26bab1a41b484e2a04ae6f09f4ab743774e6c421"
     },
     "com.avaturn.core": {
       "version": "https://github.com/avaturn/avaturn-unity-sdk-core.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c462c9f75b63ee7a11a0b5f9695f458736196741"
+      "hash": "abc46f2c16df7d30f14514d86ca4dab826792a54"
     },
     "com.avaturn.installer": {
       "version": "https://github.com/avaturn/avaturn-unity-sdk-installer.git",
@@ -26,7 +26,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "ebac7d9cfd947c90db0ecb1d43ff5d32af85fe47"
+      "hash": "d7bd1a87fbd2ac29974c168c04b509d9d797c292"
     },
     "com.unity.burst": {
       "version": "1.6.6",

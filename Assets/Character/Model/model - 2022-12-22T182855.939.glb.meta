@@ -12,7 +12,7 @@ ScriptedImporter:
     generateSecondaryUVSet: 0
   importSettings:
     nodeNameMethod: 1
-    animationMethod: 2
+    animationMethod: 3
     generateMipMaps: 1
     defaultMinFilterMode: 0
     defaultMagFilterMode: 0
