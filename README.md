@@ -1,3 +1,7 @@
+This is an old version of Avaturn Unity SDK. Please use [this repo](https://github.com/avaturn/avaturn-unity-webview-sdk) instead. See [SDK docs](https://docs.avaturn.me/docs/integration/unity/)
+
+--- 
+
 This repo contains examples of using Avaturn web view in Unity for WebGL and Mobile platforms.
 
 ## Install
